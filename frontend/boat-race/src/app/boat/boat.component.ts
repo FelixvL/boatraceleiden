@@ -20,12 +20,15 @@ export class BoatComponent {
         this.boat1.lengthBoat = 66;
         this.boat2.nameCaptain = 'Jack Sparrow';
         this.boat2.nameBoat = 'Black Pearl';
-        this.boat2.lengthBoat = 72;
-        
+        this.boat2.lengthBoat = 72;        
         this.boatArray.push(this.boat1);
         this.boatArray.push(this.boat2);
     }
-    amethodInBoat(){
-        this.boat1.nameBoat = 'checkthis';
+    makeBoat(){
+        let boat : Boat = new Boat();
+        boat.nameBoat = 'testname';
+        boat.nameCaptain = 'testnamec';
+        boat.lengthBoat = 55;
+        this.boatArray.push(boat);
     }
 }

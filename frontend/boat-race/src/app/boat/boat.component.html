@@ -1,14 +1,14 @@
 
-<button (click)="amethodInBoat()">tempMethod</button>
 
 <div *ngIf=boatArray>
     <ul>
-        <li *ngFor="let boot of boatArray"><h3>The boat with the name {{boot.nameBoat}} is {{boot.lengthBoat}} meter long. The captain is {{boot.nameCaptain}}
-            <input [(ngModel)]="boot.nameBoat">
-
-        </h3>        </li>
+        <li *ngFor="let boot of boatArray"><h3>The boat with the name {{boot.nameBoat}} is {{boot.lengthBoat}} meter long. The captain is {{boot.nameCaptain}}<input [(ngModel)]="boot.nameBoat"></h3></li>
     </ul>
-
 </div>
-
+<div>
+    Name for boat: <input [(ngModel)]="boat1.nameBoat"><br>
+    Name for captain: <input [(ngModel)]="boat1.nameBoat"><br>
+    Length of boat: <input [(ngModel)]="boat1.nameBoat"><br>
+    <button (click)="makeBoat()">Add Boat</button>
+</div>
 
