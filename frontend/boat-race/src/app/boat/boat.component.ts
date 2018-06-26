@@ -39,6 +39,9 @@ export class BoatComponent {
         this.lengthBoat = 0;
     }
     loadExternalBoats(){
-        this.boatService.getBoats().subscribe(boot => {console.log(boot);});
+        this.boatService.getBoats().subscribe(boten => {
+            console.log(boten);
+            this.boatArray = boten.json();
+        });
     }
 }
