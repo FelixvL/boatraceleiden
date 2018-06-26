@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+
+import { BoatService } from './boat.service';
+
 import { Boat } from './boat';
 
 @Component({
   selector: 'boat-component',
   templateUrl: './boat.component.html',
-  styleUrls: ['./boat.component.css']
+  styleUrls: ['./boat.component.css'],
+  providers: [ BoatService ]
 })
 export class BoatComponent {
     nameCaptain : string = '';
@@ -14,7 +18,7 @@ export class BoatComponent {
     boat2 : Boat = new Boat();
     boatArray : Boat[] = [];
 
-    constructor(){
+    constructor( private boatService : BoatService){
         this.boat1.nameCaptain = 'killian';
         this.boat1.nameBoat = 'YollieRoger';
         this.boat1.lengthBoat = 66;
@@ -33,5 +37,8 @@ export class BoatComponent {
         this.nameBoat = '';
         this.nameCaptain = '';
         this.lengthBoat = 0;
+    }
+    loadExternalBoats(){
+        this.boatService.getBoats().subscribe(boot => {console.log(boot);});
     }
 }
