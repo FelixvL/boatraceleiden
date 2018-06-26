@@ -7,9 +7,9 @@ import { Boat } from './boat';
   styleUrls: ['./boat.component.css']
 })
 export class BoatComponent {
-    nameCaptain : string = 'testnameCaptainInBoatComponent';
-    lengthBoat : number = 24;
-    nameBoat : string = 'testBoatNameInBoatComponent';
+    nameCaptain : string = '';
+    lengthBoat : number = 0;
+    nameBoat : string = '';
     boat1 : Boat = new Boat();
     boat2 : Boat = new Boat();
     boatArray : Boat[] = [];
@@ -26,9 +26,12 @@ export class BoatComponent {
     }
     makeBoat(){
         let boat : Boat = new Boat();
-        boat.nameBoat = 'testname';
-        boat.nameCaptain = 'testnamec';
-        boat.lengthBoat = 55;
+        boat.nameBoat = this.nameBoat;
+        boat.nameCaptain = this.nameCaptain;
+        boat.lengthBoat = this.lengthBoat;
         this.boatArray.push(boat);
+        this.nameBoat = '';
+        this.nameCaptain = '';
+        this.lengthBoat = 0;
     }
 }
